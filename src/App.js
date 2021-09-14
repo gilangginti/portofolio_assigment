@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import React from 'react';
+import { NavbarTemplates } from './container/Templates/NavbarTemplates';
+import Experience from './component/Organisms/Experience';
+import Education from './component/Organisms/Education';
+import Skills from './component/Organisms/Skills';
+import Interest from './component/Organisms/Interest';
+import Award from './component/Organisms/Award';
+import { Hr } from './component/Atoms/Hr';
+import About from './component/Organisms/About';
+import { AboutObj, AwardObj, EducationObj, ExperienceObj, InterestObj, SkillsObj } from './component/Organisms/Data';
+
+
+const App = () => {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+          <NavbarTemplates/>
+          <About {...AboutObj}/>
+          <Hr/>
+          <Experience {...ExperienceObj}/>
+          <Hr/>
+          <Education {...EducationObj}/>
+          <Hr/>
+          <Skills {...SkillsObj} />
+          <Hr/>
+          <Interest {...InterestObj}/>
+          <Hr/>
+          <Award {...AwardObj}/>
+      </>
+
   );
 }
 
